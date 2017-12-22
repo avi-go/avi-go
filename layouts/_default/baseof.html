@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "meta/charset" . }}
+
+    {{ if eq .Data.Singular "tag" }}
+      {{ $.Scratch.Add "titlePrefix" "Articles tagged with " }}
+    {{ else if eq .Data.Singular "category" }}
+      {{ $.Scratch.Add "titlePrefix" "Articles about " }}
+    {{ else }}
+      {{ $.Scratch.Add "titlePrefix" "" }}
+    {{ end }}
+    {{ if .IsHome }}
+      {{ $.Scratch.Add "titleSuffix" "" }}
+    {{ else }}
+      {{ $.Scratch.Add "titleSuffix" " - Abdiasiver" }}
+    {{ end }}
+    <title>{{ if isset .Params "metatitle" }}{{ .Params.MetaTitle }}{{ else }}{{ $.Scratch.Get "titlePrefix" }}{{ .Title }}{{ end }}{{ $.Scratch.Get "titleSuffix" }}</title>
+
+    {{ partial "meta/description" . }}
+    {{ partial "meta/robots" . }}
+    {{ partial "meta/author" . }}
+    {{ partial "meta/viewport" . }}
+    {{ partial "meta/theme-color" . }}
+    {{ partial "css" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/google_news.html" . }}
+    {{ partial "meta/twitter-cards" . }}
+    {{ if .RSSLink }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if (isset .Params "prev") }}
+      <link rel="prev" href="{{ .Params.prev }}">
+    {{ end }}
+    {{ if (isset .Params "next") }}
+      <link rel="next" href="{{ .Params.next }}">
+    {{ end }}
+    <link rel="manifest" href="/manifest.json">
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div class="c-stage">
+      {{ block "header" . }}{{ end }}
+      {{ block "main" . }}{{ end }}
+      {{ block "footer" . }}{{ end }}
+    </div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+    </script>
+
+  </body>
+</html>

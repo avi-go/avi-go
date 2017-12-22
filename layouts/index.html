@@ -1,0 +1,50 @@
+{{ define "title" -}}
+  {{ .Site.Title }}
+{{- end }}
+{{ define "header" }}
+  {{ partial "header" . }}
+{{ end }}
+{{ define "main" }}
+  <main>
+    <section class="c-hero">
+      <div class="o-container">
+        <div class="c-hero__inner">
+          <div class="o-vertical-spacing c-hero__text">
+            <h1 class="c-hero__title">
+              <div class="c-hero__mainTitle c-title c-title--1">Hello.</div>
+              <div class="c-hero__subTitle">Soy <strong>Abdiasriver</strong>,<br>un  <strong>Estudiante</strong> y mi blog es <a class="c-anchor" href="https://axeso.red" rel="nofollow" data-event-category="link" data-event-action="click: workplace" data-event-label="axeso.red"><strong>axeso.red</strong></a>.</div>
+            </h1>
+            <p><strong>Me gusta recopilar informacion y compartirla con los demas, algunos de los temas son </strong>Hugo,linux,windows, entre otros </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="o-vertical-spacing o-vertical-spacing--xxxl">
+      <section class="c-feature">
+        <div class="o-container o-container--s o-vertical-spacing o-vertical-spacing--xl">
+          <h2 class="c-section-headline">Personal Projects</h2>
+          <ul class="c-feature__list">
+            <li class="o-vertical-spacing o-vertical-spacing--xs c-feature__listItem">
+              <p><a class="c-anchor c-anchor--low-key" href="https://github.com/avi-go/avi-go" data-event-category="link" data-event-action="click: project" data-event-label="avi-go"><strong>avi-go</strong></a> tema para hugo.</p>
+              <p>Es un <strong>tema</strong> hugo , para bloggers y todos en general que gusten de un tema simple</p>
+            </li>
+            <li class="o-vertical-spacing o-vertical-spacing--xs c-feature__listItem">
+              <p><a class="c-anchor c-anchor--low-key" href="https://github.com/avi-go/avi-go" rel="nofollow" data-event-category="link" data-event-action="click: project" data-event-label="node-sass-magic-importer"><strong>avi-go</strong></a> Contiene una seccion home la cual puedes ver aqui, en ella se muestra una imagen y un listado de entradas recientes , descargalo aqui<a class="c-anchor c-anchor--low-key" href="https://github.com/avi-go/avi-go" rel="nofollow" data-event-category="link" data-event-action="click: project" data-event-label="node-sass-magic-importer"> avi-go</a>.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="o-container o-container--s o-vertical-spacing o-vertical-spacing--xl">
+        <h2 class="c-section-headline">Latest Articles</h2>
+        <div class="o-vertical-spacing o-vertical-spacing--xl c-article-list" itemscope itemtype="http://schema.org/Blog">
+          {{ range first 3 .Paginator.Pages }}
+            {{ partial "page-summary-h3" . }}
+          {{ end }}
+        </div>
+      </section>
+    </div>
+  </main>
+{{ end }}
+{{ define "footer" }}
+  {{ partial "footer" . }}
+{{ end }}

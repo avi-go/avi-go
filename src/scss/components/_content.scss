@@ -1,0 +1,29 @@
+.c-content {
+  h1 {
+    @extend .c-title--1;
+  }
+
+  h2 {
+    @extend .c-title--2;
+  }
+
+  h3 {
+    @extend .c-title--3;
+  }
+
+  h4 {
+    @extend .c-title--4;
+  }
+
+  a {
+    @extend .c-anchor;
+  }
+
+  blockquote {
+    padding: setting-spacing(s);
+    background: setting-color(a, gray);
+    font-style: italic;
+    font-size: setting-font-size(l);
+    font-family: serif;
+  }
+}

@@ -1,0 +1,26 @@
+{{ define "header" }}
+  {{ partial "header" . }}
+{{ end }}
+{{ define "main" }}
+  <main class="o-container o-container--s o-vertical-spacing o-vertical-spacing--xxl c-stage__main">
+    <div class="o-vertical-spacing o-vertical-spacing--l">
+      <h1 class="c-title c-title--1">{{ .Title }}</h1>
+      {{ if and .Content (not .Paginator.HasPrev) }}
+        <div class="o-vertical-spacing o-vertical-spacing--l c-intro c-content">
+          {{ .Content }}
+        </div>
+        </div>
+        <div class="o-vertical-spacing o-vertical-spacing--l">
+      {{ end }}
+      <section class="o-vertical-spacing o-vertical-spacing--xl c-article-list" itemscope itemtype="http://schema.org/Blog">
+        {{ range .Paginator.Pages }}
+          {{ partial "page-summary" . }}
+        {{ end }}
+      </section>
+      {{ partial "pagination" . }}
+    </div>
+  </main>
+{{ end }}
+{{ define "footer" }}
+  {{ partial "footer" . }}
+{{ end }}

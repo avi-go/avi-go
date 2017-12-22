@@ -1,0 +1,7 @@
+name = "avi-go"
+license = "MIT"
+min_version = 0.19
+
+[author]
+  name = "Abdiasriver"
+  homepage = "https://axeso.red"
