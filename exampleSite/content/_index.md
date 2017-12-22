@@ -1,4 +1,4 @@
 +++
-title = "Markus Oberlehner - Web Developer, Open Source Contributor, Blogger"
-description = "Markus Oberlehner is a Web Developer, Open Source Contributor and Blogger living in Austria. He writes articles about JavaScript, CSS and Front-End Architecture."
+title = "Tu axeso a la informacion"
+description = "Abdiasriver y axeso.red comparten contigo datos e informacion de insteres, ocio,humor,documentos, archivos escolares, github, hugo, bootstrap,linux,win,utilidades."
 +++
